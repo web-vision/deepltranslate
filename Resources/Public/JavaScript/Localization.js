@@ -144,46 +144,61 @@ Localization.initialize = function() {
     if ($triggerButton.data('allowTranslate')) {
         actions.push(
             '<div class="row">'
-                + '<div class="btn-group col-sm-3">' + Localization.actions.translate[0].outerHTML + '</div>'
-                + '<div class="col-sm-9">'
-                    + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.translate'] + '</p>'
-                + '</div>'
+            + '<div class="btn-group col-sm-3">' + Localization.actions.translate[0].outerHTML + '</div>'
+            + '<div class="col-sm-9">'
+            + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.translate'] + '</p>'
+            + '</div>'
             + '</div>'
         );
-        actions.push(
-            '<div class="row" id="deeplTranslateAuto">'
+
+        // if allowDeeplTranslateAuto (and others) is undefined, we use default of "on"
+        // (could happen if fluidBasedPageModule feature toggle is on and LanguageColumns.html partial in this extension
+        // is not used)
+        var allowDeeplTranslateAuto = $triggerButton.data('allowDeeplTranslateAuto');
+        if (allowDeeplTranslateAuto == null || allowDeeplTranslateAuto) {
+            actions.push(
+                '<div class="row" id="deeplTranslateAuto">'
                 + '<div class="btn-group col-sm-3">' + Localization.actions.deepltranslateAuto[0].outerHTML + '</div>'
                 + '<div class="col-sm-9" id="deeplTextAuto">'
-                    + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.deepltranslateAuto']+ '</p>'
+                + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.deepltranslateAuto'] + '</p>'
                 + '</div>'
-            + '</div>'
-        );
-        actions.push(
-            '<div class="row" id="deeplTranslate">'
+                + '</div>'
+            );
+        }
+        var allowDeeplTranslate = $triggerButton.data('allowDeeplTranslate');
+        if (allowDeeplTranslate == null || allowDeeplTranslate) {
+            actions.push(
+                '<div class="row" id="deeplTranslate">'
                 + '<div class="btn-group col-sm-3">' + Localization.actions.deepltranslate[0].outerHTML + '</div>'
                 + '<div class="col-sm-9" id="deeplText">'
-                    + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.deepltranslate'] + '</p>'
+                + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.deepltranslate'] + '</p>'
                 + '</div>'
-            + '</div>'
-        );
-        actions.push(
-            '<div class="row" id="googleTranslate">'
+                + '</div>'
+            );
+        }
+        var allowGoogleTranslate = $triggerButton.data('allowGoogleTranslate');
+        if (allowGoogleTranslate == null || allowGoogleTranslate) {
+            actions.push(
+                '<div class="row" id="googleTranslate">'
                 + '<div class="btn-group col-sm-3">' + Localization.actions.googletranslate[0].outerHTML + '</div>'
                 + '<div class="col-sm-9" id="googleText">'
-                    + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.googleTranslate'] + '</p>'
+                + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.googleTranslate'] + '</p>'
                 + '</div>'
-            + '</div>'
-        );
-        actions.push(
-            '<div class="row" id="googleTranslateAuto">'
+                + '</div>'
+            );
+        }
+        var allowGoogleTranslateAuto = $triggerButton.data('allowGoogleTranslateAuto');
+        if (allowGoogleTranslateAuto == null || allowGoogleTranslateAuto) {
+            actions.push(
+                '<div class="row" id="googleTranslateAuto">'
                 + '<div class="btn-group col-sm-3">' + Localization.actions.googletranslateAuto[0].outerHTML + '</div>'
                 + '<div class="col-sm-9" id="googleTextAuto">'
-                    + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.googleTranslateAuto'] + '</p>'
+                + '<p class="t3js-helptext t3js-helptext-translate text-muted">' + TYPO3.lang['localize.educate.googleTranslateAuto'] + '</p>'
                 + '</div>'
-            + '</div>'
-        );
+                + '</div>'
+            );
+        }
     }
-
     if ($triggerButton.data('allowCopy')) {
         actions.push(
             '<div class="row">'
