@@ -1,6 +1,6 @@
 # cat=Settings/O; type=string; label= Deepl API Key
 apiKey =
-# cat=Settings/O; type=string; label= Deepl API Url: Please note that with Deepl Free, the API host is https://api-free.deepl.com
+# cat=Settings/O; type=string; label= Deepl API Url: Please note that with Deepl Free API, the host is https://api-free.deepl.com
 apiUrl = https://api.deepl.com/v2/translate
 # cat=Settings/O; type=string; label= Google Translate API Key (Non freemode)
 googleapiKey =
