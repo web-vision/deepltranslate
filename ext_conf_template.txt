@@ -1,10 +1,10 @@
 # cat=Settings/O; type=string; label= Deepl API Key
 apiKey =
-# cat=Settings/O; type=string; label= Deepl API Url
+# cat=Settings/O; type=string; label= Deepl API Url (Please make sure to use the right API domain. api-free.deepl.com, if you are using DeepL Free API)
 apiUrl = https://api.deepl.com/v2/translate
-# cat=Settings/O; type=string; label= Google translate API Key(Non freemode)
+# cat=Settings/O; type=string; label= Google Translate API Key (Non freemode)
 googleapiKey =
-# cat=Settings/O; type=string; label= Google translate API Url(Non freemode)
+# cat=Settings/O; type=string; label= Google Translate API Url (Non freemode)
 googleapiUrl = https://translation.googleapis.com/language/translate/v2
 
 
